@@ -16,7 +16,8 @@ class Solution {
         if(vis[node]==1) return;
         vis[node]=1;
         for(int i=0;i<arr[node].length;i++){
-            if(arr[node][i]==1) dfs(arr, vis, i);
+            if(i==node) continue;
+            if(arr[node][i]==1 && vis[i]==0) dfs(arr, vis, i);
         }
     }
 }
